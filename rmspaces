@@ -1,0 +1,18 @@
+#!/bin/perl
+
+use strict;
+use warnings;
+use File::Copy;
+
+die "wrong number of params\n  usage: $0 filename [filename...]" if scalar @ARGV < 1;
+foreach my $source (@ARGV) {
+  die "$source: no such file\n" if not(-e $source);
+  my $dest = $source;
+  if($dest =~ s/ /_/g) {
+    move($source, $dest);
+    print "$source was moved to $dest\n";
+  }
+  else {
+    print "no spaces to remove in $source\n";
+  }
+}
