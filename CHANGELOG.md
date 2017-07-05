@@ -1,5 +1,7 @@
 # Change Log
 
+## [Unreleased]
+
 ## [0.1] - 2017-07-05
 ### Added
 - Option to select which char be replaced.
