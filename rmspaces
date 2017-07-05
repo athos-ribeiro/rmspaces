@@ -22,11 +22,13 @@ use Getopt::Long qw(GetOptions);
 use Pod::Usage;
 
 my $help = 0;
+my $verbose = 0;
 my $separator = '_';
 my $target = ' ';
 
 GetOptions('separator=s' => \$separator,
            'target=s' => \$target,
+           'verbose' => \$verbose,
            'help' => \$help) or pod2usage(2);
 
 pod2usage(1) if $help;
@@ -40,7 +42,7 @@ foreach my $source (@ARGV) {
     print "$source was moved to $dest\n";
   }
   else {
-    print "no spaces to remove in $source\n";
+    print "No matches for $source\n" if $verbose;
   }
 }
 
@@ -60,9 +62,13 @@ Use -h for detailed help.
 
 =over 8
 
+=item B<-v, --verbose>
+
+Print information on each file rmspaces tried to apply substitutions on. This may be useful if you are using wildcards.
+
 =item B<-s, --separator>
 
-The character (or string) that will replace the spaces. Defaults to a underline character (_).
+The character (or string) that will replace the spaces. Defaults to an underline character (_).
 
 =item B<-t, --target>
 
@@ -70,7 +76,7 @@ The character (or string) to be substituted. Defaults to a single space.
 
 =item B<-h, --help>
 
-Prints help message.
+Print help message.
 
 =back
 

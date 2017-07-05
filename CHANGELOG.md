@@ -1,6 +1,8 @@
 # Change Log
 
 ## [Unreleased]
+### Added
+- Verbose option.
 
 ## [0.1] - 2017-07-05
 ### Added
