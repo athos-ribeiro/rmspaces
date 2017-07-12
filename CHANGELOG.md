@@ -1,5 +1,9 @@
 # Change Log
 
+## [Unreleased]
+### Added
+- Document mass moving files feature.
+
 ## [0.2] - 2017-07-05
 ### Added
 - Verbose option.
