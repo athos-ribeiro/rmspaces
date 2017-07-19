@@ -5,6 +5,10 @@ use warnings;
 
 our $VERSION = 0.4;
 
+1;
+
+__END__
+
 =head1 NAME
 
 App::rmspaces - an app to remove spaces from file names
@@ -35,6 +39,4 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 =cut
-
-1;
 
