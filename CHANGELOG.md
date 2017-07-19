@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Added
 - Document mass moving files feature.
+- rmspaces is now under the App::rmspaces module.
 
 ## [0.2] - 2017-07-05
 ### Added
