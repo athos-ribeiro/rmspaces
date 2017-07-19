@@ -6,7 +6,7 @@ WriteMakefile(
   VERSION_FROM     => 'lib/App/rmspaces.pm',
   ABSTRACT_FROM    => 'lib/App/rmspaces.pm',
   AUTHOR           => 'Athos Ribeiro',
-  LICENSE          => 'gpl',
+  LICENSE          => 'gpl_3',
   MIN_PERL_VERSION => '5.008004',
   EXE_FILES        => ['script/rmspaces'],
   PREREQ_PM        => {
