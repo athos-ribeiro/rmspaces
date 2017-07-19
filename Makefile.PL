@@ -16,6 +16,10 @@ WriteMakefile(
     'Getopt::Long' => '0',
     'Pod::Usage' => '0',
   },
+  TEST_REQUIRES    => {
+    'Test::Script'   => 0,
+    'Test::More'   => 0,
+  },
   (eval { ExtUtils::MakeMaker->VERSION(6.46) } ? (META_MERGE => {
       'meta-spec' => { version => 2 },
       resources => {
