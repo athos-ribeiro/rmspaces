@@ -1,6 +1,6 @@
 Revision history for Perl module App::rmspaces
 
-Unreleased
+0.3 2017-07-18
   * Document mass moving files feature.
   * rmspaces is now under the App::rmspaces module.
 
