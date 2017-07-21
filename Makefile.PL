@@ -14,7 +14,7 @@ WriteMakefile(
     'warnings' => 0,
     'File::Copy' => '0',
     'Getopt::Long' => '0',
-    'Pod::Usage' => '0',
+    'Pod::Usage' => '1.33',
   },
   TEST_REQUIRES    => {
     'Test::Script'   => 0,
