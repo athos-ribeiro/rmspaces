@@ -18,6 +18,7 @@
 use strict;
 use warnings;
 use File::Copy;
+use File::Spec;
 use Getopt::Long qw(GetOptions);
 use Pod::Usage;
 
@@ -36,8 +37,9 @@ pod2usage(1) if $help;
 pod2usage(2) if scalar @ARGV < 1;
 foreach my $source (@ARGV) {
   die "$source: no such file\n" if not(-e $source);
-  my $dest = $source;
-  if($dest =~ s/$target/$separator/g) {
+  my ($volume, $directory, $filename) = File::Spec->splitpath($source);
+  if($filename =~ s/$target/$separator/g) {
+    my $dest = File::Spec->catpath($volume, $directory, $filename);
     move($source, $dest);
     print "$source was moved to $dest\n";
   }

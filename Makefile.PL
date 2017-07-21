@@ -13,6 +13,7 @@ WriteMakefile(
     'strict'   => 0,
     'warnings' => 0,
     'File::Copy' => '0',
+    'File::Spec' => '0',
     'Getopt::Long' => '0',
     'Pod::Usage' => '1.33',
   },

@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 use Test::Script;
-use Test::More tests => 10;
+use Test::More tests => 13;
 use File::Copy qw(move);
  
 my %options = ();
@@ -28,3 +28,10 @@ move 't/data/has-space', 't/data/has space';
 script_runs(['script/rmspaces', '-t', '_', '-s', '-', 't/data/no_space'], 'replace _ with -');
 ok(-e 't/data/no-space', 'new file with no _ exists');
 move 't/data/no-space', 't/data/no_space';
+
+# Check usage when there is a target char in a dir in the path
+# See https://github.com/athos-ribeiro/rmspaces/issues/1
+script_runs(['script/rmspaces', '-t', 'a', 't/data/no_space'], 'replace a with _');
+ok(-e 't/data/no_sp_ce', 'new file with no a exists');
+ok(! -e 't/data/no_space', 'old file does not exist');
+move 't/data/no_sp_ce', 't/data/no_space';
