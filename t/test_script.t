@@ -1,8 +1,8 @@
 use strict;
 use warnings;
 use Test::Script;
-use Test::More tests => 13;
-use File::Copy qw(move);
+use Test::More tests => 17;
+use File::Copy;
  
 my %options = ();
 
@@ -35,3 +35,18 @@ script_runs(['script/rmspaces', '-t', 'a', 't/data/no_space'], 'replace a with _
 ok(-e 't/data/no_sp_ce', 'new file with no a exists');
 ok(! -e 't/data/no_space', 'old file does not exist');
 move 't/data/no_sp_ce', 't/data/no_space';
+
+# Check usage when file already exists
+# See https://github.com/athos-ribeiro/rmspaces/issues/2
+$options{'exit'} = 3;
+copy('t/data/has space', 't/data/has_space');
+script_runs(['script/rmspaces', 't/data/has space'], \%options, 'cannot replace file. exist status is 3');
+ok(-e 't/data/has space', 'File was not moved');
+unlink 't/data/has_space';
+
+# Check usage with --force when file already exists
+# See https://github.com/athos-ribeiro/rmspaces/issues/2
+copy('t/data/has space', 't/data/has_space');
+script_runs(['script/rmspaces', '-f', 't/data/has space'], 'Force overwrite');
+ok(! -e 't/data/has space', 'File was moved');
+move 't/data/has_space', 't/data/has space';
