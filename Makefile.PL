@@ -18,7 +18,7 @@ WriteMakefile(
     'Pod::Usage' => '1.33',
   },
   TEST_REQUIRES    => {
-    'Test::Script'   => 0,
+    'Test::Script'   => 1.09,
     'Test::More'   => 0,
   },
   (eval { ExtUtils::MakeMaker->VERSION(6.46) } ? (META_MERGE => {
