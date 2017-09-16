@@ -94,7 +94,7 @@ Print help message.
 
 =head1 DESCRIPTION
 
-This is a simple script to remove those anoying, lame, awful spaces from file
+This is an application to remove those anoying, lame, awful spaces from file
 names. Just add it to your PATH and run
 
 =over 8

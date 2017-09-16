@@ -3,8 +3,8 @@
 [![Build Status](https://travis-ci.org/athos-ribeiro/rmspaces.svg?branch=master)](https://travis-ci.org/athos-ribeiro/rmspaces)
 [![CPAN version](https://badge.fury.io/pl/App-rmspaces.svg)](https://badge.fury.io/pl/App-rmspaces)
 
-This is a simple script to remove those anoying, lame, awful spaces from file
-names. Just run `rmspaces FILENAME`.
+This is a perl application to remove those anoying, lame, awful spaces from
+file names. Just run `rmspaces FILENAME`.
 
 Note that it could also be used to change multiple file names by using the
 --target and the --separator arguments. For example, if you have
